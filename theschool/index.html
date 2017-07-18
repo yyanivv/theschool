@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>School Management</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Fresca|Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro" rel="stylesheet">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body style="display: none;">
+    <header>
+        <nav class="navbar navbar-default" style="margin-top: 30px;padding-bottom: 5px;border-radius: 0;border: none;background: #1c6b55;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header  navbar-font-color" style="padding-top: 12px;">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">The School</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" style="padding-top: 18px;">
+                        <li><a href="index.html">School</a></li>
+                        <li id="administratorTab"><a href="administration.html">Administration</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="padding-top:10px; padding-right: 5px;">
+                            <span id="login-name"></span>
+                            <br>
+                            <span id="login-role"></span>
+                            <br>
+                            <span id="logout">Logout</span>
+                        </li>
+
+                        <li><img src="images/user.png" id="user-img"></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="panel panel-success panel-courses">
+                        <div class="panel-heading">Courses<span class="glyphicon glyphicon-plus pull-right" id="btn-add-course"></span></div>
+                        <div class="panel-body">
+                            <ul class="ul-courses"></ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="panel panel-success panel-students">
+                        <div class="panel-heading">Students <span class="glyphicon glyphicon-plus pull-right" id="btn-add-student"></span></div>
+                        <div class="panel-body">
+                            <ul class="ul-students"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-12 col-lg-6">
+                    <div class="panel panel-success panel-main">
+                        <div class="panel-heading main-heading"><span id="heading-main">School Status</span>
+                        <span class="glyphicon glyphicon-edit pull-right hide" id="btn-edit-student">
+                        <span class="glyphicon glyphicon-edit pull-right hide" id="btn-edit-course">
+                        </div>
+                        <div class="panel-body status">
+                            <div class="col-xs-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Total Courses</div>
+                                    <div class="panel-body total-courses"></div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Total Students</div>
+                                    <div class="panel-body total-students"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body show-course" style="display: none">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-3 course-img"></div>
+                                <div class="col-xs-12 col-md-9 course-des"></div>
+                                <div class="col-xs-12 student-list-in-course"></div>
+                            </div>
+                        </div>
+                        <div class="panel-body show-student" style="display: none">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3 student-img"></div>
+                                <div class="col-xs-12 col-sm-9 student-details"></div>
+                                <div class="col-xs-12 student-courses"></div>
+                            </div>
+                        </div>
+                        <div class="panel-body add-student" style="display: none">
+                            <div class="row">
+                                <div class="col-xs-12 add-student-details">
+                                   <input type="button" class="btn btn-success" value="SAVE" id="save-btn">
+                                   <input type="button" class="btn btn-danger pull-right hide" value="DELETE" id="delete-btn">
+                                   
+                                    <form style="padding: 15px;">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                            <input id="name" type="text" class="form-control" name="name" placeholder="Name">
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                                            <input id="phone" type="text" class="form-control" name="phone" placeholder="Phone">
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            <input id="email" type="text" class="form-control" name="email" placeholder="eMail">
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i></span>
+                                            <input id="file" type="file" class="form-control file-loading" name="file" placeholder="file">
+                                        </div>
+                                        <div class="panel panel-default" style="margin-top: 15px;">
+                                            <!-- Default panel contents -->
+                                            <div class="panel-heading student-choose-course">Choose Courses</div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body add-course" style="display: none">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-3 add-course-details"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--    <footer>
+        <div class="container-fluid">
+            <div class="row" style="border-top: 1px solid #000"></div>
+        </div>
+    </footer>-->
+</body>
+
+</html>

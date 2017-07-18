@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #eee;
+}
+h1{
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Rock Salt', cursive;
+}
+#logo {
+    max-width: 100px;
+}
+
+.form-row{
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 10px;
+    font-family: 'Fresca', sans-serif;
+    font-size: 22px;
+}
+.form-row input{
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.form-row input:focus { 
+    outline: 0;
+}
+#btn-login{
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+
+}
+footer{
+    padding-top: 50px;
+}

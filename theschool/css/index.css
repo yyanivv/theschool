@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../images/yanivschool01-01.png);
+
+}
+h1 , h2 , h3 , h4 , h5 , h6{
+    font-family: 'Rock Salt', cursive;
+}
+#user-img{
+    margin-top: 13px;
+    max-width: 60px;
+}
+#logout{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.navbar-default .navbar-brand , .navbar-default .navbar-nav>li>a{
+    color: #e5ffda;
+}
+.navbar-default .navbar-brand:hover , .navbar-default .navbar-nav>li>a:hover , #logout:hover{
+    color:darkslategrey;
+}
+.navbar-brand{
+    font-size: 36px;
+    font-family: 'Advent Pro', sans-serif;
+    color: #e5ffda;
+}
+.navbar-nav{
+    font-size: 24px;
+    font-family: 'Advent Pro', sans-serif;
+    color: #e5ffda;
+}
+.navbar-right{
+    font-size: 16px;
+    font-family: 'Advent Pro', sans-serif;
+}
+.ul-courses, .ul-students , .student-list-in-course ul , .student-courses ul{
+    list-style-type: none;
+}
+
+.ul-courses li , .ul-students li , .student-list-in-course ul li {
+    margin-bottom: 5px;
+}
+.student-courses ul li {
+    margin-top: 10px;
+}
+
+.ul-courses li span , .ul-students li span , .student-courses ul li span{
+    font-size: 22px;
+    padding: 10px;
+    margin-top: 10px;
+    font-family: 'Advent Pro', sans-serif;
+}
+.course-img img{
+    width: 120px;
+    margin-top: 24px;
+}
+p{
+    line-height: 1.6;
+}
+.material-switch > input[type="checkbox"] {
+    display: none;
+}
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative;
+    width: 40px;
+}
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: 3px;
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: 3px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.input-group{
+    margin: 5px 0px;
+}
+ul.list-group , .ul-courses li , .ul-students li , #btn-add-student , #btn-edit-student{
+    cursor: pointer;
+}
